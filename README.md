@@ -12,10 +12,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. npm start
 
 Modify Roadmap.xslx in PUBLIC folder following the structure below
-| Module | Iteration1 | Iteration2 | Iteration3 |
-|---------|-----------------------------------------------------------|----------------------------|-----------------------------------------------------------|
-| Module1 | Module1 Iteration1 Bullet1<br>Module1 Iteration1 Bullet2 | Module1 Iteration2 Bullet1 | Module1 Iteration3 Bullet1 |
-| Module2 | Module2 Iteration1 Bullet1 | | Module2 Iteration3 Bullet1<br>Module2 Iteration3 Bullet2 |
+
+| Module  | Iteration1                                               | Iteration2                 | Iteration3                                               |
+| ------- | -------------------------------------------------------- | -------------------------- | -------------------------------------------------------- |
+| Module1 | Module1 Iteration1 Bullet1<br>Module1 Iteration1 Bullet2 | Module1 Iteration2 Bullet1 | Module1 Iteration3 Bullet1                               |
+| Module2 | Module2 Iteration1 Bullet1                               |                            | Module2 Iteration3 Bullet1<br>Module2 Iteration3 Bullet2 |
 
 ### Example
 
