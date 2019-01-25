@@ -1,0 +1,64 @@
+.roadmap h1 {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 400;
+  padding: 1rem 0 0;
+  color: var(--bg0);
+}
+
+.roadmap__grid {
+  --columns: 3;
+  display: grid;
+  grid-template-columns: 4rem repeat(var(--columns), minmax(275px, 1fr));
+  grid-template-rows: 3rem;
+  grid-auto-rows: 1fr;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.roadmap__griditem-lane,
+.roadmap__griditem-module {
+  display: grid;
+  place-content: center;
+  padding: 0 0.5rem;
+  --bg: var(--bg0);
+  --fg: var(--fg0);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.roadmap__griditem-lane {
+  margin: 0 0.5rem;
+  position: sticky;
+  top: 0;
+}
+
+.roadmap__griditem-module {
+  margin: 0.5rem 0;
+  position: relative;
+  float: left;
+}
+
+.roadmap__griditem-module span {
+  transform: rotate(-90deg);
+}
+
+.roadmap__griditem-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border-bottom: 2px solid rgba(47, 73, 91, 0.05);
+}
+
+.roadmap__griditem-item li {
+  --bg: var(--bg1);
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  border-left: 5px solid var(--bg);
+  background-color: #fff;
+}
