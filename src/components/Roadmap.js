@@ -24,7 +24,7 @@ export default class Roadmap extends Component {
     const gridItems = createGridItems(data)
     return (
       <div className="roadmap">
-        <h1>{this.state.title}</h1>
+        <h1 className="roadmap__title">{this.state.title}</h1>
         <div className="roadmap__grid" style={{ '--columns': gridItems.columns }}>
           {gridItems.items.map((item, i) => (
             <GridItem key={i} item={item} />
