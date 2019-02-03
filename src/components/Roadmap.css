@@ -19,7 +19,6 @@
   display: grid;
   grid-template-columns: 4rem repeat(var(--columns), minmax(275px, 1fr));
   grid-template-rows: 3rem;
-  grid-auto-rows: 1fr;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -39,7 +38,7 @@
 .roadmap__griditem-filler,
 .roadmap__griditem-lane {
   position: sticky;
-  top: 75px;
+  top: 69px;
   background-color: var(--main-bg);
   color: var(--bg0);
   z-index: 2;
@@ -52,6 +51,7 @@
 
 .roadmap__griditem-module {
   margin: 0.25rem 0;
+  min-height: 8rem;
   background-color: var(--bg);
 }
 
@@ -59,11 +59,12 @@
   transform: rotate(-90deg);
 }
 
-.roadmap__griditem-item {
+.roadmap__griditem-item,
+.roadmap__griditem-statusitem {
   list-style-type: none;
   margin: 0 0.25rem;
   padding: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   border-bottom: 1px solid rgba(47, 73, 91, 0.1);
 }
@@ -73,7 +74,28 @@
   padding: 0.25rem 0 0.25rem 0.75rem;
   margin: 0.5rem 0;
   border-radius: 2px;
-  border-left: 5px solid var(--bg);
+  border-left: 0.5rem solid var(--bg);
   background-color: #fff;
   box-shadow: 0 0.5px 1.5px rgba(0, 0, 0, 0.24);
+}
+
+.roadmap__griditem-statusitem li {
+  --bg: var(--bg0);
+  display: grid;
+  grid-template-columns: auto 2fr auto;
+  grid-column-gap: 0.5rem;
+  align-items: center;
+  text-align: left;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 0.5px 1.5px rgba(0, 0, 0, 0.24);
+}
+
+.roadmap__griditem-statusitem .item-note {
+  align-self: end;
+  font-size: 0.75rem;
+  text-align: right;
+  color: darkgray;
 }

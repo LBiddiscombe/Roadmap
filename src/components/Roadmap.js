@@ -4,6 +4,7 @@ import './Roadmap.css'
 
 export default class Roadmap extends Component {
   state = {
+    chartType: '0',
     title: '',
     data: []
   }
@@ -11,7 +12,8 @@ export default class Roadmap extends Component {
   componentDidMount() {
     setTimeout(
       function() {
-        this.setState({ title: window.roadmap.title, data: window.roadmap.data })
+        const [chartType, title] = window.roadmap.title.split('.')
+        this.setState({ chartType, title, data: window.roadmap.data })
       }.bind(this),
       1000
     )
@@ -21,7 +23,7 @@ export default class Roadmap extends Component {
     const { data } = this.state
     if (!data || data.length === 0) return null
 
-    const gridItems = createGridItems(data)
+    const gridItems = createGridItems(data, this.state.chartType)
     return (
       <div className="roadmap">
         <h1 className="roadmap__title">{this.state.title}</h1>
@@ -35,7 +37,7 @@ export default class Roadmap extends Component {
   }
 }
 
-const createGridItems = data => {
+const createGridItems = (data, chartType) => {
   const modules = data.map(row => row.Module)
   const lanes = Object.keys(data[0]).splice(1)
 
@@ -46,7 +48,11 @@ const createGridItems = data => {
   modules.forEach((module, row) => {
     items.push({ type: 'module', row, value: module })
     lanes.forEach((lane, col) => {
-      items.push({ type: 'item', row, col, value: data[row][lane].split('\n') })
+      if (chartType === '0') {
+        items.push({ type: 'statusitem', row, col, value: data[row][lane].split('\n') })
+      } else {
+        items.push({ type: 'item', row, col, value: data[row][lane].split('\n') })
+      }
     })
   })
 
