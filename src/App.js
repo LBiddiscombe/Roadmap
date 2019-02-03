@@ -18,10 +18,12 @@ class App extends Component {
         let chartTypes = []
         let data = []
         window.roadmap.forEach(sheet => {
-          const [chartType, title] = sheet.title.split('.')
-          titles.push(title)
-          chartTypes.push(chartType)
-          data.push(sheet.data)
+          if (sheet.title.split('.').length === 2) {
+            const [chartType, title] = sheet.title.split('.')
+            titles.push(title)
+            chartTypes.push(chartType)
+            data.push(sheet.data)
+          }
         })
 
         this.setState({ chartTypes, titles, data })
