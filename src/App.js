@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Roadmap from './components/Roadmap'
+import Nav from './components/Nav'
 
 class App extends Component {
   state = {
@@ -29,11 +30,16 @@ class App extends Component {
     )
   }
 
+  setSheetIndex = sheet => {
+    this.setState({ sheetIndex: sheet })
+  }
+
   render() {
     const { sheetIndex, chartTypes, titles, data } = this.state
 
     return (
       <div className="App">
+        <Nav titles={titles} handleClick={this.setSheetIndex} />
         <Roadmap
           chartType={chartTypes[sheetIndex]}
           title={titles[sheetIndex]}
