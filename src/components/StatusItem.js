@@ -42,13 +42,13 @@ const StatusIcon = props => {
   const { status } = props
   switch (status) {
     case 0:
-      return <i className="fas fa-times-circle" style={{ color: 'tomato' }} />
+      return <i className="fas fa-times" style={{ color: 'tomato' }} />
     case 1:
-      return <i className="fas fa-exclamation-circle" style={{ color: 'orange' }} />
+      return <i className="fas fa-exclamation" style={{ color: 'orange' }} />
     case 2:
-      return <i className="fas fa-check-circle" style={{ color: 'green' }} />
+      return <i className="fas fa-check" style={{ color: 'green' }} />
     default:
-      return <i className="fas fa-info-circle" style={{ color: 'mediumslateblue' }} />
+      return <i className="fas fa-info" style={{ color: 'mediumslateblue' }} />
   }
 }
 

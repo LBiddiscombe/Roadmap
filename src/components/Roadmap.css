@@ -83,7 +83,7 @@
 .roadmap__griditem-statusitem li {
   --bg: var(--bg0);
   display: grid;
-  grid-template-columns: auto 2fr auto;
+  grid-template-columns: 1rem 2fr auto;
   grid-column-gap: 0.5rem;
   align-items: center;
   text-align: left;
@@ -92,6 +92,10 @@
   border-radius: 2px;
   background-color: #fff;
   box-shadow: 0 0.5px 1.5px rgba(0, 0, 0, 0.24);
+}
+
+.roadmap__griditem-statusitem li svg {
+  justify-self: center;
 }
 
 .roadmap__griditem-statusitem .item-note {
