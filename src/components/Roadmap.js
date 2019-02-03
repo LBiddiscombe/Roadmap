@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { GridItem } from './GridItem'
+import { GridCell } from './GridCell'
 import './Roadmap.css'
 
 export default class Roadmap extends Component {
@@ -23,13 +23,13 @@ export default class Roadmap extends Component {
     const { data } = this.state
     if (!data || data.length === 0) return null
 
-    const gridItems = createGridItems(data, this.state.chartType)
+    const gridCells = createGridCells(data, this.state.chartType)
     return (
       <div className="roadmap">
         <h1 className="roadmap__title">{this.state.title}</h1>
-        <div className="roadmap__grid" style={{ '--columns': gridItems.columns }}>
-          {gridItems.items.map((item, i) => (
-            <GridItem key={i} item={item} />
+        <div className="roadmap__grid" style={{ '--columns': gridCells.columns }}>
+          {gridCells.items.map((item, i) => (
+            <GridCell key={i} item={item} />
           ))}
         </div>
       </div>
@@ -37,7 +37,7 @@ export default class Roadmap extends Component {
   }
 }
 
-const createGridItems = (data, chartType) => {
+const createGridCells = (data, chartType) => {
   const modules = data.map(row => row.Module)
   const lanes = Object.keys(data[0]).splice(1)
 
