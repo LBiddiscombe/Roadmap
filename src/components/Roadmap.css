@@ -95,6 +95,7 @@
 
 .roadmap__griditem-statusitem .item-note {
   align-self: end;
+  justify-self: center;
   font-size: 0.75rem;
   text-align: right;
   color: darkgray;

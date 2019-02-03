@@ -52,14 +52,16 @@
         .then(function(ab) {
           const data = new Uint8Array(ab)
           const wb = XLSX.read(data, { type: 'array' })
-          const wsname = wb.SheetNames[0]
-          const ws = wb.Sheets[wsname]
-          window.roadmap = {
-            title: wsname,
-            data: XLSX.utils.sheet_to_json(ws, {
-              defval: ''
+          window.roadmap = []
+          wb.SheetNames.forEach((wsname, index) => {
+            const ws = wb.Sheets[wsname]
+            window.roadmap.push({
+              title: wsname,
+              data: XLSX.utils.sheet_to_json(ws, {
+                defval: ''
+              })
             })
-          }
+          })
         })
     </script>
   </body>

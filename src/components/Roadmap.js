@@ -4,29 +4,40 @@ import './Roadmap.css'
 
 export default class Roadmap extends Component {
   state = {
-    chartType: '0',
-    title: '',
+    sheetIndex: 0,
+    chartTypes: ['0'], //0=Capability Matrix, 1=Roadmap
+    titles: [],
     data: []
   }
 
   componentDidMount() {
     setTimeout(
       function() {
-        const [chartType, title] = window.roadmap.title.split('.')
-        this.setState({ chartType, title, data: window.roadmap.data })
+        let titles = []
+        let chartTypes = []
+        let data = []
+        window.roadmap.forEach(sheet => {
+          const [chartType, title] = sheet.title.split('.')
+          titles.push(title)
+          chartTypes.push(chartType)
+          data.push(sheet.data)
+        })
+
+        this.setState({ chartTypes, titles, data })
       }.bind(this),
       1000
     )
   }
 
   render() {
-    const { data } = this.state
+    const { data, chartTypes, titles, sheetIndex } = this.state
     if (!data || data.length === 0) return null
 
-    const gridCells = createGridCells(data, this.state.chartType)
+    const gridCells = createGridCells(data[sheetIndex], chartTypes[sheetIndex])
+
     return (
       <div className="roadmap">
-        <h1 className="roadmap__title">{this.state.title}</h1>
+        <h1 className="roadmap__title">{titles[sheetIndex]}</h1>
         <div className="roadmap__grid" style={{ '--columns': gridCells.columns }}>
           {gridCells.items.map((item, i) => (
             <GridCell key={i} item={item} />
