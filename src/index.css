@@ -42,6 +42,8 @@
   --fg19: #fff;
   --fg20: #fff;
   --main-bg: #f3f2f1;
+  --odd: var(--main-bg);
+  --even: var(--main-bg);
 }
 
 body {

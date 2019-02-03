@@ -46,12 +46,11 @@
 }
 
 .roadmap__griditem-lane {
-  margin: 0 0.5rem;
   border-bottom: 2px solid rgba(47, 73, 91, 0.1);
 }
 
 .roadmap__griditem-module {
-  margin: 0.25rem 0;
+  margin: 0.25rem;
   min-height: 8rem;
   background-color: var(--bg);
 }
@@ -62,10 +61,12 @@
 
 .roadmap__griditem-item,
 .roadmap__griditem-statusitem {
+  --cellbg: var(--odd);
   list-style-type: none;
-  margin: 0 0.25rem;
+  margin: 0;
   padding: 0.5rem;
   font-size: 1rem;
+  background-color: var(--cellbg);
   font-weight: 400;
   border-bottom: 1px solid rgba(47, 73, 91, 0.1);
 }
