@@ -9,6 +9,7 @@
   margin: 0;
   font-weight: 400;
   padding: 1rem;
+  padding-left: 6rem;
   color: var(--fg0);
   background-color: var(--bg0);
   z-index: 2;
@@ -94,8 +95,6 @@
 }
 
 .roadmap__griditem-statusitem .item-note {
-  align-self: end;
-  justify-self: center;
   font-size: 0.75rem;
   text-align: right;
   color: darkgray;
