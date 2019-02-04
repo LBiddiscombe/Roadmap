@@ -1,0 +1,29 @@
+.importfile {
+  text-align: center;
+  height: 100vh;
+}
+
+.importfile h1 {
+  background-color: var(--bg0);
+  color: var(--fg0);
+  font-weight: 400;
+  padding: 1rem;
+  margin-top: 0;
+}
+
+.importfile__form {
+  display: grid;
+  place-items: center center;
+}
+
+.importfile__form input[type='file'] {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.importfile__form input[type='file'] + label {
+  cursor: pointer;
+}

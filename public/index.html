@@ -19,7 +19,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Roadmap</title>
     <script src="xlsx.core.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
     <script
@@ -42,27 +42,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script>
-      const url = 'Roadmap.xlsx'
-      fetch(url)
-        .then(function(res) {
-          if (!res.ok) throw new Error('fetch failed')
-          return res.arrayBuffer()
-        })
-        .then(function(ab) {
-          const data = new Uint8Array(ab)
-          const wb = XLSX.read(data, { type: 'array' })
-          window.roadmap = []
-          wb.SheetNames.forEach((wsname, index) => {
-            const ws = wb.Sheets[wsname]
-            window.roadmap.push({
-              title: wsname,
-              data: XLSX.utils.sheet_to_json(ws, {
-                defval: ''
-              })
-            })
-          })
-        })
-    </script>
   </body>
 </html>
