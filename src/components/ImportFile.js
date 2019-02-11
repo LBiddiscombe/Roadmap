@@ -7,13 +7,13 @@ class ImportFile extends React.Component {
       <div className="importfile">
         <h1>Excel Roadmap Viewer</h1>
         <form className="importfile__form">
-          <p>
+          <div>
             <input type="file" accept=".xlsx" id="uploadexcel" onChange={this.props.handleChange} />
             <label htmlFor="uploadexcel">
               <i className={'fas fa-upload fa-7x'} />
               <p>Upload Excel file</p>
             </label>
-          </p>
+          </div>
         </form>
       </div>
     )
