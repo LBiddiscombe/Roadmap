@@ -27,7 +27,7 @@ const importExcel = e => {
           })
         }
       })
-      resolve({ roadmap })
+      resolve([...roadmap])
     }
   })
 }
