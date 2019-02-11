@@ -8,9 +8,7 @@ function Nav({ titles, handleClick }) {
 
   const onClick = e => {
     setOpen(!isOpen)
-    if (e.target.dataset.sheet) {
-      handleClick(e.target.dataset.sheet)
-    }
+    e.target.dataset.sheet && handleClick(e.target.dataset.sheet)
   }
 
   const panelClasses = ['nav__panel']
