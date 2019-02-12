@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './nav.css'
 
-function Nav({ titles, handleClick }) {
+function Nav({ titles, handleClick, handleCapture }) {
   if (!titles || titles.length === 0) return null
 
   const [isOpen, setOpen] = useState(false)
@@ -31,6 +31,9 @@ function Nav({ titles, handleClick }) {
             })}
           </ul>
         </div>
+      </div>
+      <div className="nav__capture" onClick={handleCapture}>
+        <i className="fas fa-camera" />
       </div>
     </div>
   )

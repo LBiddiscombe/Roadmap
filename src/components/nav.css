@@ -31,3 +31,13 @@
 .nav__panel ul li:hover {
   font-weight: 700;
 }
+
+.nav__capture {
+  cursor: pointer;
+  font-size: 2rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  color: var(--fg0);
+  z-index: 3;
+}

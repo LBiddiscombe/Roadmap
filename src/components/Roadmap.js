@@ -11,7 +11,7 @@ export default class Roadmap extends Component {
     const gridCells = createGridCells(data, chartType)
 
     return (
-      <div className="roadmap">
+      <div className="roadmap" id="roadmap">
         <h1 className="roadmap__title">{title}</h1>
         <div className="roadmap__grid" style={{ '--columns': gridCells.columns }}>
           {gridCells.items.map((item, i) => (

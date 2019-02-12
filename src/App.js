@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import domtoimage from 'dom-to-image'
 import './App.css'
 import Roadmap from './components/Roadmap'
 import Nav from './components/Nav'
@@ -16,10 +17,19 @@ function App() {
     setRoadmap(await importExcel(e))
   }
 
+  const savePNG = () => {
+    domtoimage.toPng(document.getElementById('roadmap')).then(function(dataUrl) {
+      var link = document.createElement('a')
+      link.download = title + '.png'
+      link.href = dataUrl
+      link.click()
+    })
+  }
+
   return (
     <div className="App">
       {!loaded && <ImportFile handleChange={handleChange} />}
-      {loaded && <Nav titles={titles} handleClick={setSheetIndex} />}
+      {loaded && <Nav titles={titles} handleClick={setSheetIndex} handleCapture={savePNG} />}
       {loaded && <Roadmap chartType={chartType} title={title} data={data} />}
     </div>
   )
