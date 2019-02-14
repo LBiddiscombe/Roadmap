@@ -15,17 +15,45 @@
   z-index: 2;
 }
 
-.roadmap__grid {
-  --columns: 3;
+.roadmap__gridwrapper {
   display: grid;
-  grid-template-columns: 4rem repeat(var(--columns), minmax(275px, 1fr));
-  grid-template-rows: 3rem;
+  grid-template-areas:
+    'filler lanes'
+    'modules items';
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: 3rem 1fr;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.roadmap__griditem-lane,
-.roadmap__griditem-module {
+.roadmap__gridwrapper-lanes {
+  --columns: 3;
+  grid-area: lanes;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(275px, 1fr));
+}
+
+.roadmap__gridwrapper-lanes,
+.roadmap__gridwrapper-filler {
+  position: sticky;
+  top: 69px;
+}
+
+.roadmap__gridwrapper-modules {
+  grid-area: modules;
+  display: grid;
+  grid-template-columns: 4rem;
+}
+
+.roadmap__grid {
+  --columns: 3;
+  grid-area: items;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(275px, 1fr));
+}
+
+.roadmap__gridwrapper-lane,
+.roadmap__gridwrapper-module {
   display: grid;
   place-content: center;
   padding: 0 0.5rem;
@@ -37,26 +65,24 @@
   white-space: nowrap;
 }
 
-.roadmap__griditem-filler,
-.roadmap__griditem-lane {
-  position: sticky;
-  top: 69px;
+.roadmap__gridwrapper-filler,
+.roadmap__gridwrapper-lane {
   background-color: var(--main-bg);
   color: var(--bg0);
   z-index: 2;
 }
 
-.roadmap__griditem-lane {
+.roadmap__gridwrapper-lane {
   border-bottom: 2px solid rgba(47, 73, 91, 0.1);
 }
 
-.roadmap__griditem-module {
+.roadmap__gridwrapper-module {
   margin: 0.25rem;
   min-height: 8rem;
   background-color: var(--bg);
 }
 
-.roadmap__griditem-module span {
+.roadmap__gridwrapper-module span {
   transform: rotate(-90deg);
 }
 
@@ -70,6 +96,7 @@
   background-color: var(--cellbg);
   font-weight: 400;
   border-bottom: 1px solid rgba(47, 73, 91, 0.1);
+  min-height: 8rem;
 }
 
 .roadmap__griditem-item li {
@@ -117,12 +144,12 @@
   }
 
   .roadmap__grid {
-    grid-template-columns: 3rem repeat(var(--columns), minmax(calc(100vw - 4rem), 1fr));
+    grid-template-columns: repeat(var(--columns), minmax(calc(100vw - 6rem), 1fr));
     padding: 0;
   }
 
-  .roadmap__griditem-filler,
-  .roadmap__griditem-lane {
+  .roadmap__gridwrapper-filler,
+  .roadmap__gridwrapper-lane {
     scroll-snap-align: center;
   }
 }

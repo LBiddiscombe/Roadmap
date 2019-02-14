@@ -4,7 +4,7 @@ import getColors from '../utils/getColors'
 const StatusItem = props => {
   const { item, colourise } = props
   return (
-    <ul className="roadmap__griditem-statusitem" style={getColors(item.col)}>
+    <ul className="roadmap__griditem-statusitem griditem" style={getColors(item.col)}>
       {item.value.map(item => {
         let displayValue = item
         let status = 4

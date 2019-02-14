@@ -4,7 +4,7 @@ import getColors from '../utils/getColors'
 const Item = props => {
   const { item, colourise } = props
   return (
-    <ul className="roadmap__griditem-item" style={getColors(item.col)}>
+    <ul className="roadmap__griditem-item griditem" style={getColors(item.col)}>
       {item.value.map(
         listitem =>
           listitem && (

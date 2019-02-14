@@ -5,7 +5,7 @@ const Module = props => {
   const { item, colourise } = props
   return (
     <div
-      className="roadmap__griditem-module"
+      className="roadmap__gridwrapper-module"
       style={colourise === 'module' ? getColors(item.row) : {}}
     >
       <span>{item.value}</span>

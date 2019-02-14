@@ -19,4 +19,4 @@ function GridCell(props) {
   return <div className="roadmap__griditem-filler" />
 }
 
-export { GridCell }
+export default GridCell
