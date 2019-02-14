@@ -9,17 +9,7 @@ const createGridCells = (data, chartType) => {
   modules.forEach((module, row) => {
     items.push({ type: 'module', row, value: module })
     lanes.forEach((lane, col) => {
-      switch (chartType) {
-        case '0':
-          items.push({ type: 'statusitem', row, col, value: data[row][lane].split('\n') })
-          break
-        case '1':
-          items.push({ type: 'item', row, col, value: data[row][lane].split('\n') })
-          break
-        default:
-          items.push({ type: 'filler', row, col, value: '' })
-          break
-      }
+      items.push({ type: 'item', row, col, value: data[row][lane].split('\n') })
     })
   })
 

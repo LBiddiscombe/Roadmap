@@ -15,7 +15,7 @@ export default class Roadmap extends Component {
         <h1 className="roadmap__title">{title}</h1>
         <div className="roadmap__grid" style={{ '--columns': gridCells.columns }}>
           {gridCells.items.map((item, i) => (
-            <GridCell key={i} item={item} />
+            <GridCell key={i} item={item} chartType={chartType} />
           ))}
         </div>
       </div>
